@@ -4,7 +4,7 @@ import "./App.css";
 
 const email = "pasupathyhemalatha@gmail.com";
 const linkedin = "https://www.linkedin.com/in/hemapasu/";
-const github = "https://github.com/";
+const github = "https://github.com/pasupathyhemalatha-oss";
 
 const technologies = [
   "React.js",
@@ -175,32 +175,80 @@ const projects = [
   {
     number: "01",
     category: "FRONTEND DEVELOPMENT",
-    title: "Personal Portfolio",
+    title: "Personal Portfolio Website",
     description:
-      "A responsive developer portfolio showcasing professional experience, technical skills, and selected work.",
-    technologies: ["React", "TypeScript", "CSS", "Vite"],
+      "My personal developer portfolio showcasing professional experience, technical skills, education, and selected projects in a responsive, dark-themed interface.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "CSS3",
+      "React Hooks",
+      "IntersectionObserver",
+    ],
+    implementation: [
+      "Built reusable, data-driven sections for experience, skills, education, projects, and contact details with React and TypeScript.",
+      "Used IntersectionObserver through React useEffect to reveal section content as visitors scroll, with a graceful fallback when the API is unavailable.",
+      "Created the responsive dark navy-and-cyan design, animated profile elements, sticky navigation, and component styling with custom CSS.",
+    ],
     symbol: "</>",
-    status: "IN PROGRESS",
+    status: "LIVE WEBSITE",
+    demoUrl: "https://pasupathyhemalatha-oss.github.io/hema-portfolio/",
+    repoUrl: "https://github.com/pasupathyhemalatha-oss/hema-portfolio",
+    demoLabel: "View Live Portfolio",
+    sourceLabel: "View GitHub",
   },
   {
     number: "02",
-    category: "E-COMMERCE DEVELOPMENT",
-    title: "Shopify Customization",
+    category: "REACT E-COMMERCE",
+    title: "HPMart Marketplace",
     description:
-      "Custom storefront components and product experiences focused on usability, responsive design, and maintainability.",
-    technologies: ["Shopify Liquid", "JavaScript", "HTML", "CSS"],
-    symbol: "↗",
-    status: "EXPERIENCE",
+      "An interactive, responsive storefront demo with a product catalogue, category browsing, search, sorting, filters, quick view, cart, and wishlist.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "CSS3",
+      "React Hooks",
+      "localStorage",
+    ],
+    implementation: [
+      "Used typed product data and React state to drive the catalogue, product quick view, cart drawer, and wishlist.",
+      "Used memoized client-side filtering and sorting for search, category, price, rating, deals, and wishlist views.",
+      "Persisted cart, wishlist, and recently viewed products in browser localStorage; checkout is a demo and collects no payment.",
+    ],
+    symbol: "HP",
+    status: "INTERACTIVE DEMO",
+    demoUrl: "",
+    repoUrl: "https://github.com/pasupathyhemalatha-oss/hpmart",
+    demoLabel: "Live Demo Soon",
+    sourceLabel: "View GitHub",
   },
   {
     number: "03",
-    category: "DATA & ANALYTICS",
-    title: "Website Analytics Dashboard",
+    category: "REACT ANALYTICS DASHBOARD",
+    title: "Pulseboard Analytics Dashboard",
     description:
-      "A dashboard concept for visualizing website performance, tracking KPIs, and presenting actionable insights.",
-    technologies: ["Looker Studio", "GA4", "Analytics"],
-    symbol: "◫",
-    status: "PLANNED",
+      "An analytics workspace demo for exploring KPI trends, channel performance, page engagement, conversion steps, device mix, and marketing campaigns.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "CSS3",
+      "SVG Charts",
+      "localStorage",
+    ],
+    implementation: [
+      "Built trend charts and sparklines with inline SVG from typed, illustrative data rather than a charting-library dependency.",
+      "Added 7-, 30-, and 90-day ranges, metric and channel filters, searchable/sortable page data, campaign filtering, and CSV export.",
+      "Added a light/dark theme and browser-persisted annotations; the metrics are sample data and are not connected to GA4 or a live analytics provider.",
+    ],
+    symbol: "↗",
+    status: "INTERACTIVE DEMO",
+    demoUrl: "",
+    repoUrl: "https://github.com/pasupathyhemalatha-oss/pulseboard-dashboard",
+    demoLabel: "Live Demo Soon",
+    sourceLabel: "View GitHub",
   },
 ];
 
@@ -702,14 +750,72 @@ function App() {
                         <span key={technology}>{technology}</span>
                       ))}
                     </div>
+
+                    <div className="project-implementation">
+                      <span className="project-implementation-label">
+                        HOW IT&apos;S IMPLEMENTED
+                      </span>
+                      <ul>
+                        {project.implementation.map((detail) => (
+                          <li key={detail}>{detail}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div
+                      className="project-actions"
+                      aria-label={`${project.title} links`}
+                    >
+                      {project.demoUrl ? (
+                        <a
+                          className="project-link project-link-primary"
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`${project.demoLabel} for ${project.title}`}
+                        >
+                          {project.demoLabel} <span aria-hidden="true">↗</span>
+                        </a>
+                      ) : (
+                        <span
+                          className="project-link project-link-disabled"
+                          aria-disabled="true"
+                          title="This project has not been deployed as a live website yet."
+                        >
+                          {project.demoLabel}
+                        </span>
+                      )}
+
+                      {project.repoUrl ? (
+                        <a
+                          className="project-link project-link-secondary"
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`${project.sourceLabel} for ${project.title}`}
+                        >
+                          {project.sourceLabel}{" "}
+                          <span aria-hidden="true">↗</span>
+                        </a>
+                      ) : (
+                        <span
+                          className="project-link project-link-disabled"
+                          aria-disabled="true"
+                          title="Source code is not publicly available for this professional project."
+                        >
+                          {project.sourceLabel}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </article>
               ))}
             </div>
 
             <p className="project-disclaimer">
-              Add repository and live-demo links when each project is ready to
-              share.
+              HPMart and Pulseboard are interactive portfolio demos. Their
+              commerce and analytics data are illustrative; neither is connected
+              to a live commerce backend or analytics provider.
             </p>
           </div>
         </section>
