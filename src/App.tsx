@@ -221,7 +221,7 @@ const projects = [
     status: "INTERACTIVE DEMO",
     demoUrl: "https://pasupathyhemalatha-oss.github.io/hpmart/",
     repoUrl: "https://github.com/pasupathyhemalatha-oss/hpmart",
-    demoLabel: "View Live",
+    demoLabel: "View Live HPMart",
     sourceLabel: "View GitHub",
   },
   {
@@ -247,7 +247,7 @@ const projects = [
     status: "INTERACTIVE DEMO",
     demoUrl: "https://pasupathyhemalatha-oss.github.io/pulseboard-dashboard/",
     repoUrl: "https://github.com/pasupathyhemalatha-oss/pulseboard-dashboard",
-    demoLabel: "View Live",
+    demoLabel: "View Live Dashboard",
     sourceLabel: "View GitHub",
   },
 ];
