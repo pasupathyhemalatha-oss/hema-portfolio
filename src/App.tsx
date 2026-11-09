@@ -107,7 +107,7 @@ const experiences = [
     role: "Web Developer",
     type: "INTERNSHIP",
     location: "Utrecht, Netherlands",
-    dates: "JUL 2025 — JAN 2026",
+    dates: "",
     summary:
       "Contributed to web development, e-commerce customization, responsive interfaces, analytics, and reporting automation.",
     responsibilities: [
@@ -132,7 +132,7 @@ const experiences = [
     role: "Software Engineer",
     type: "FULL-TIME",
     location: "Insurance Domain",
-    dates: "VERIFY EMPLOYMENT DATES",
+    dates: "",
     summary:
       "Worked on enterprise software development, React applications, reusable components, API integration, and application performance.",
     responsibilities: [
